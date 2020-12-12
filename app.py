@@ -3,7 +3,7 @@ import zipfile
 import shutil
 
 WORK_DIRECTORY = os.getcwd()
-TEMP_FILE = os.path.join(WORK_DIRECTORY, 'data', 'temp.xml')
+TEMP_FILE = os.path.join(WORK_DIRECTORY, 'data', 'document.xml')
 DOCS_FILE = os.path.join(WORK_DIRECTORY, 'docs', 'word', 'document.xml')
 
 def createZip(path, zip):
@@ -25,18 +25,7 @@ def editValue(regex, val):
     print('Запись завершена')
 
 if __name__ in '__main__':
-    print('=== Проверка путей по умолчанию ===')
-    print(WORK_DIRECTORY)
-    print(TEMP_FILE)
-    print(DOCS_FILE)
-
-    print('=== Редактирование файла ===')
     editValue('#ОРГАНИЗАЦИЯ#', 'ОАО ГАЗПРОМ')
-
-    print('=== Архивирование ===')
-    # zipf = zipfile.ZipFile(os.path.join(WORK_DIRECTORY, 'org.docx'), 'w', zipfile.ZIP_DEFLATED)
-    # createZip('docs', zipf)
-    # zipf.close()
     file_name = os.path.join(WORK_DIRECTORY, 'results', "Петров")
     shutil.make_archive(file_name, 'zip', 'docs')
     os.rename(file_name+'.zip', file_name+'.docx')

@@ -4,7 +4,8 @@ import os
 WORKING_DIRECTORY = os.getcwd()
 SHEET_FILE = os.path.join(WORKING_DIRECTORY, 'data', 'data.xls')
 
-x1 = pd.ExcelFile(SHEET_FILE)
-df = x1.parse(0)
-print(df.head())
-print(x1.sheet_names)
+x1 = pd.read_excel(SHEET_FILE)
+print(x1.columns)
+
+for i in x1.index:
+    print(x1['Должность'][i])
