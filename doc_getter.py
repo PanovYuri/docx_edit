@@ -9,8 +9,8 @@ DOCS_FILE = os.path.join(WORKING_DIRECTORY, 'data', 'maket.docx')
 get_str_num = lambda num: f"{num:02d}"
 
 # Получение данных из таблицы
-def generate_docs():
-    data = pd.read_excel(SHEET_FILE, 'Лист6')
+def generate_docs(list_name):
+    data = pd.read_excel(SHEET_FILE, list_name)
     for i in data.index:
         context = {
             'level' : data['Должность'][i],
@@ -27,4 +27,4 @@ def generate_docs():
         print("Выполнен документ номер: {}".format(i))
 
 if __name__ == '__main__':
-    generate_docs()
+    generate_docs('Лист6')

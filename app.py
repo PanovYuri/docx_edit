@@ -1,1 +1,1 @@
-from doc_getter import
+from doc_getter import generate_docs
