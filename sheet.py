@@ -9,3 +9,6 @@ print(x1.columns)
 
 for i in x1.index:
     print(x1['Должность'][i])
+    print(x1['Организация'][i])
+    print(x1['Организация'][i])
+    
